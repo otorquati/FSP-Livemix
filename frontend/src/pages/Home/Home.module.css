@@ -1,0 +1,42 @@
+/*  CSS da Page Home */
+.container {
+	width: 100vw;
+	min-height: 87vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.container img {
+	height: 500px;
+}
+
+.container p {
+	font-size: 2rem;
+	color: var(--natural-soft);
+}
+
+.container span {
+	color: var(--natural);
+}
+
+.btn {
+	width: 250px;
+	height: 50px;
+	font-size: 1.25rem;
+	font-weight: bold;
+	border: 0;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
+.btn-natural {
+	background-color: var(--natural);
+	color: var(--natural-soft);
+}
+
+.btn:hover {
+	background-color: var(--natural-soft);
+	color: var(--natural);
+}

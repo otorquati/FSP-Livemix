@@ -1,0 +1,40 @@
+:root {
+  font-family: "Oxanium", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Cores
+  --primary: #003344;
+  --secondary: #396174;
+  --natural: #00a3ec;
+  --natural-light: #ecfcff;
+  --natural-soft: #f1f1e6;
+  --primary-hard: #001d26
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(
+    to bottom,
+    #003344,
+    #0d3b4d,
+    #184456,
+    #224c5f,
+    #2c5568,
+    #2c5568,
+    #2c5568,
+    #2c5568,
+    #224c5f,
+    #184456,
+    #0d3b4d,
+    #003344
+  );
+}
