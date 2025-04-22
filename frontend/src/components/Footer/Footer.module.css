@@ -4,7 +4,7 @@
 	font-weight:normal;
 	font-size: 1rem;
 	background-color: var(--primary-hard);
-	color: var(--natural-soft);
+	color: greenyellow;
 
 	display: flex;
 	justify-content:center;

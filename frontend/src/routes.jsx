@@ -1,9 +1,11 @@
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import Perfil from './pages/Account'
+import Account from './pages/Account'
 import Playlist from './pages/Playlist'
 import Favorites from './pages/Favorites'
+import About from './pages/About'
+import Page404 from './pages/Page404'
+import { BrowserRouter, Route, Routes } from 'react-router'
 
 function AppRoutes() {
 	return (
@@ -11,9 +13,11 @@ function AppRoutes() {
 		<Routes>
 			<Route path="/" element={<Home />}></Route>
 			<Route path="/login" element={<Login />}></Route>
-			<Route path="/perfil" element={<Perfil />}></Route>
+			<Route path="/account" element={<Account />}></Route>
 			<Route path="/playlist" element={<Playlist />}></Route>
 			<Route path="/favorites" element={<Favorites />}></Route>
+			<Route path="/about" element={<About />}></Route>
+			<Route path="*" element={<Page404 />}></Route>
 		</Routes>
 		</BrowserRouter>
 	)

@@ -1,7 +1,14 @@
+import Footer from "../../components/Footer"
+import Header from "../../components/Header"
+import styles from "./Account.module.css"
 function Account () {
 	return (
 		<>
-		<h1>Gestão de Contas</h1>
+		<Header />
+		<section className={styles.container}>
+			<h1>Gestão de Contas</h1>
+		</section>
+		<Footer />
 		</>
 	)
 }

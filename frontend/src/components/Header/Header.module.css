@@ -28,5 +28,9 @@
 }
 
 .header a:hover {
-	color: var(--natural-soft);
+	color: var(--enhanced);
+}
+
+.playicon img {
+	height: 64px;
 }

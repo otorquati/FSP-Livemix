@@ -1,0 +1,62 @@
+.playlist {
+	width: 100vw;
+	height: 87vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.items {
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 40%;
+	gap:20px;
+}
+.calendar div {
+	color: var(--natural-soft);
+	width: 100%;
+}
+
+.tabela table{
+	width: 100%;
+	& th {
+		text-align: left;
+		border: 1px solid var(--natural);
+	}
+	& td {
+		border: 1px solid var(--natural);
+	}
+}
+
+.tabela .artista th{
+	width: 200px;
+}
+.sampleUrl {
+	text-align: center;
+}
+.preferida td, button {
+	text-align: center;
+	background-color: transparent;
+	color: var(--enhanced);
+}
+h1 {
+	font-size: 3rem;
+	color: var(--natural);
+	margin-bottom: 20px;
+}
+p {
+	font-size: 2rem;
+	color: var( --natural-soft)
+}
+
+span {
+	font-weight: bold;
+	color: var(--natural)
+}
+.star {
+	color: var(--enhanced);
+	height: 24px;
+}

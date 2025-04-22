@@ -5,17 +5,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  // Cores
+  /* Cores */
   --primary: #003344;
   --secondary: #396174;
   --natural: #00a3ec;
   --natural-light: #ecfcff;
   --natural-soft: #f1f1e6;
-  --primary-hard: #001d26
-
+  --primary-hard: #001d26;
+  --enhanced: #adff2f;
+  --alert: red;
 }
 
 * {
+  max-width: 1980px; 
   margin: 0;
   padding: 0;
   box-sizing: border-box;

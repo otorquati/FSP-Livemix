@@ -1,0 +1,34 @@
+.about {
+	height: 87vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
+}
+
+div {
+	color: var(--natural)
+}
+
+h1 {
+	font-size: 3rem;
+	color: var(--natural);
+	margin-bottom: 20px;
+}
+p {
+	font-size: 2rem;
+	color: var( --natural-soft)
+}
+
+span {
+	font-weight: bold;
+	color: var(--natural)
+}
+
+img {
+	height: 200px;
+}
+
+.logo {
+	height: 64px;
+}

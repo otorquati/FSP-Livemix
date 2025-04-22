@@ -1,5 +1,5 @@
 /*  CSS da Page Home */
-.container {
+.home {
 	width: 100vw;
 	min-height: 87vh;
 
@@ -8,30 +8,30 @@
 	justify-content: space-around;
 }
 
-.container img {
+.home img {
 	height: 500px;
 }
 
-.container p {
+.home p {
 	font-size: 2rem;
 	color: var(--natural-soft);
 }
 
-.container span {
+.home span {
 	color: var(--natural);
 }
 
 .btn {
 	width: 250px;
 	height: 50px;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	border: 0;
 	border-radius: 5px;
 	cursor:pointer;
 }
 
-.btn-natural {
+.btn_natural {
 	background-color: var(--natural);
 	color: var(--natural-soft);
 }
