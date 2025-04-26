@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import styles from "./Playlist.module.css";
 import { Calendar } from "rsuite";
 import Star from "../../assets/star.svg";
+import NoStar from "../../assets/Pictogrammers-Material-Light-Star.32.png";
 import CirclePlay from "../../assets/circle-play.svg";
 function Playlist() {
   const edicao = [
@@ -34,6 +35,24 @@ function Playlist() {
       sampleUrl: "http://www.centraldj.com.br/freeconnection/434",
       preferida: false,
     },
+    {
+      id: "400",
+      edicaoId: "848",
+      order: "4",
+      Artista: "Madonna",
+      Titulo: "Everybody",
+      sampleUrl: "http://www.centraldj.com.br/freeconnection/434",
+      preferida: true,
+    },
+    {
+      id: "400",
+      edicaoId: "848",
+      order: "5",
+      Artista: "Donna Summer",
+      Titulo: "Our Love",
+      sampleUrl: "http://www.centraldj.com.br/freeconnection/434",
+      preferida: true,
+    },
   ];
   return (
     <>
@@ -49,7 +68,7 @@ function Playlist() {
             <div className={styles.tabela}>
               <table>
                 <caption>
-                  <h3>Edicao n. Músicas Tocadas</h3>
+                  <h3>{`Músicas Tocadas - Edicao n.${edicao.edicaoId ?? ' 848'}`}</h3>
                 </caption>
                 {/* Cabeçalho da tabela */}
                 <thead>
@@ -77,9 +96,9 @@ function Playlist() {
                           />
                         </button>
                       </td>
-                      <td>
-                        <button className={styles.preferida}>
-                          {edicao.preferida ? "Sim" : ""}
+                      <td className={styles.sampleUrl}>
+                        <button>
+                          {edicao.preferida ? <img src={Star} className={styles.star} alt="preferida"></img> : <img src={NoStar} className={styles.hidestar} alt="preferida"></img>}
                         </button>
                       </td>
                     </tr>

@@ -25,10 +25,13 @@ span {
 	color: var(--natural)
 }
 
-img {
-	height: 200px;
+.thorweb {
+	height: 300px;
+	border-radius: 50px;
 }
 
 .logo {
-	height: 64px;
+	height: 72px;
+	border: 2px solid var(--natural);
+	border-radius: 10px;
 }

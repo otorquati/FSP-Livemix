@@ -7,7 +7,6 @@ import GoogleIcon from "../../assets/Arturo-Wibawa-Akar-Google.svg";
 function Login() {
   return (
     <>
-      <Header />
       <Container>
         <form action="" className={style.login}>
           <h2>Login Page</h2>
@@ -38,7 +37,6 @@ function Login() {
           </div>
         </form>
       </Container>
-      <Footer />
     </>
   );
 }
