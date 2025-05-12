@@ -1,12 +1,14 @@
 .login {
 	min-width: 450px;
-	min-height: 40vh;
+	min-height: 50vh;
 	display: flex;
 	flex-direction: column;
 	box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
+	border: 2px solid gray;
 	border-radius: 15px;
 	align-items: center;
-	padding-top: 1rem;
+	justify-content: center;
+	padding: 1rem;
 	background-color: var(--primary-hard);
 }
 
@@ -39,6 +41,12 @@
 }
 
 .icon {
-	width: 18px;
-	height: 18px;
+	width: 32px;
+	height: 32px;
+}
+
+.img {
+	width: 64px;
+	height: 64px;
+
 }

@@ -24,6 +24,7 @@
 }
 
 body {
+  background-color: black;
 	background-image: linear-gradient(
     to bottom,
     #003344,
@@ -40,3 +41,12 @@ body {
     #003344
   );
 }
+
+.loginpage {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+  }

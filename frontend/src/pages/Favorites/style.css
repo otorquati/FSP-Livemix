@@ -1,9 +1,11 @@
 .favorites {
-	height: 250px;
+	height: 100px;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
-	align-items: left;
 	background-color: var(--primary-hard);
+	border-radius: 15px;
+	padding: 20px;
 }
 
 div {
@@ -25,7 +27,7 @@ span {
 	color: var(--natural)
 }
 
-.favorites {
-	display: flex;
-	flex-direction: column;
+a:hover {
+	color: var(--enhanced);
 }
+

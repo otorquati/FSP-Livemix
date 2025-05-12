@@ -1,8 +1,8 @@
-import styles from "./Container.module.css";
+import "./style.css";
 
 function Container ({ children }) {
 	return (
-		<section className={styles.container}>
+		<section className="container">
 			{children}
 		</section>
 	)

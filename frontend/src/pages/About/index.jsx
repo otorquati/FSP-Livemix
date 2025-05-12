@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import styles from "./About.module.css";
+import './style.css';
 import ImgSobre from "../../assets/Logo-Thor4Web.png";
 import Container from "../../components/Container";
 import CentralDjLogo from "../../assets/CentralDJ_Logo.png"
@@ -9,9 +9,9 @@ function About() {
     <>
       <Header />
       <Container>
-        <section className={styles.about}>
+        <section className="about">
           <div>
-            <img src={ImgSobre} alt="" className={styles.thorweb}/>
+            <img src={ImgSobre} alt="" className="thorweb"/>
           </div>
           <div>
             <h1>Sobre o caderninho...</h1>
@@ -24,7 +24,7 @@ function About() {
             <br/>
             <h2>Acesse a Central DJ para ouvir os set</h2>
             <a href="https://www.centraldj.com.br/livemix" target="_blank" rel="external">
-              <img className={styles.logo} src={CentralDjLogo} alt="Logo Central DJ" />
+              <img className="logo" src={CentralDjLogo} alt="Logo Central DJ" />
             </a>
           </div>
         </section>

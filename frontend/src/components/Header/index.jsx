@@ -1,10 +1,12 @@
-import styles from "./Header.module.css";
-import { Link } from 'react-router-dom'
-import Logo from '../../assets/Logo-LiveMix.png'
-import PlayIcon from "../../assets/play_icon.png"
+import "./style.css";
+import { Link } from "react-router-dom";
+import Logo from "../../assets/Logo-LiveMix.png";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+
 function Header() {
   return (
-    <header className={styles.header}>
+    <header className="cabecalho">
       <Link to="/">
         <img src={Logo} alt="" />
       </Link>
@@ -16,9 +18,11 @@ function Header() {
         <Link to="/Favorites">Caderninho</Link>
         <Link to="/About">Sobre</Link>
       </nav>
-      <Link to="/Login">
-        <img src={PlayIcon} className={styles.playicon} alt="Login for play" />
-      </Link>
+      <div>
+        <Link to='/Login'>
+          <FontAwesomeIcon className="Link" icon={faCirclePlay} />
+        </Link>
+      </div>
     </header>
   );
 }

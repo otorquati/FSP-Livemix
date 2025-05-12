@@ -1,16 +1,17 @@
-import express from "express";
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+import express from "express";
+import 'dotenv/config';
+import { db }  from "./connect.js";
 
 const app = express();
 app.use(express.json());
 
-{
-  /* CRUD - Usuarios */
-}
+const PORT = 3000;
+
+{  /* CRUD - Usuarios */ }
+
 app.post("/user", async (req, res) => {
-  await prisma.user.create({
+  await db.user.create({
     data: {
       name: req.body.name,
       email: req.body.email,
@@ -19,15 +20,15 @@ app.post("/user", async (req, res) => {
     },
   });
   res.status(201).json(req.body);
-});
+}); 
 
 app.get("/user", async (req, res) => {
-  const users = await prisma.user.findMany();
+  const users = await db.user.findMany();
   res.status(200).json(users);
 });
 
 app.put("/user/:id", async (req, res) => {
-  await prisma.user.create({
+  await db.user.create({
     where: {
       id: req.params.id,
     },
@@ -42,7 +43,7 @@ app.put("/user/:id", async (req, res) => {
 });
 
 app.delete("/user/:id", async (req, res) => {
-  await prisma.user.delete({
+  await db.user.delete({
     where: {
       id: req.params.id,
     },
@@ -54,7 +55,7 @@ app.delete("/user/:id", async (req, res) => {
   /* CRUD - Edições */
 }
 app.post("/editions", async (req, res) => {
-  const edicoes = await prisma.editions.create({
+  const edicoes = await db.editions.create({
     data: {
       editionId: req.body.editionId,
       editionDate: req.body.editionDate,
@@ -64,12 +65,12 @@ app.post("/editions", async (req, res) => {
 });
 
 app.get("/editions", async (req, res) => {
-  const editions = await prisma.editions.findMany();
+  const editions = await db.editions.findMany();
   res.status(200).json(editions);
 });
 
 app.post("/editions/:id", async (req, res) => {
-  const edicoes = await prisma.editions.findUnique({
+  const edicoes = await db.editions.findUnique({
     where: {
       id: req.params.id,
     },
@@ -82,7 +83,7 @@ app.post("/editions/:id", async (req, res) => {
 });
 
 app.delete("/editions", async (req, res) => {
-  const editions = await prisma.editions.delete({
+  const editions = await db.editions.delete({
     where: {
       id: req.params.id,
     },
@@ -94,7 +95,7 @@ app.delete("/editions", async (req, res) => {
   /* CRUD - Playlist */
 }
 app.post("/playlist", async (req, res) => {
-  const playList = await prisma.playlist.create({
+  const playList = await db.playlist.create({
     data: {
       playlistOrder: req.body.playlistOrder,
       songsId: req.body.songsId,
@@ -105,12 +106,12 @@ app.post("/playlist", async (req, res) => {
 });
 
 app.get("/playlist", async (req, res) => {
-  const playlist = await prisma.editions.findMany();
+  const playlist = await db.editions.findMany();
   res.status(200).json(playlist);
 });
 
 app.put("/playlist/:id", async (req, res) => {
-  const playList = await prisma.playlist.findUnique({
+  const playList = await db.playlist.findUnique({
     where: {
       id: req.params.id,
     },
@@ -124,7 +125,7 @@ app.put("/playlist/:id", async (req, res) => {
 });
 
 app.delete("/playlist/:id", async (req, res) => {
-  const playlist = await prisma.editions.delete({
+  const playlist = await db.editions.delete({
     where: {
       id: req.params.id,
     },
@@ -136,7 +137,7 @@ app.delete("/playlist/:id", async (req, res) => {
   /* CRUD - Songs */
 }
 app.post("/songs", async (req, res) => {
-  const songs = await prisma.songs.create({
+  const songs = await db.songs.create({
     data: {
       title: req.body.title,
       Artist: req.body.Artist,
@@ -148,12 +149,12 @@ app.post("/songs", async (req, res) => {
 });
 
 app.get("/songs", async (req, res) => {
-  const songs = await prisma.songs.findMany();
+  const songs = await db.songs.findMany();
   res.status(200).json(songs);
 });
 
 app.put("/songs/:id", async (req, res) => {
-  const songs = await prisma.songs.findUnique({
+  const songs = await db.songs.findUnique({
     where: {
       id: req.params.id,
     },
@@ -168,7 +169,7 @@ app.put("/songs/:id", async (req, res) => {
 });
 
 app.delete("/songs/:id", async (req, res) => {
-  const songs = await prisma.songs.delete({
+  const songs = await db.songs.delete({
     where: {
       id: req.params.id,
     },
@@ -176,4 +177,6 @@ app.delete("/songs/:id", async (req, res) => {
   res.status(200).json({ message: "Música deletada com sucesso!" });
 });
 
-app.listen(3000);
+
+
+app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));

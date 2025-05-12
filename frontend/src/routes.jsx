@@ -8,6 +8,7 @@ import Page404 from './pages/Page404'
 import { BrowserRouter, Route, Routes } from 'react-router'
 
 function AppRoutes() {
+
 	return (
 		<BrowserRouter>
 		<Routes>

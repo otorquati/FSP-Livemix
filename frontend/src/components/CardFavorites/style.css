@@ -1,0 +1,12 @@
+.cardfavorites {
+	max-width: 450px;
+	width: 50%;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: var(--primary-hard);
+	border-radius: 15px;
+	padding: 20px;
+}
+

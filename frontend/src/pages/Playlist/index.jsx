@@ -1,7 +1,7 @@
 import Container from "../../components/Container";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import styles from "./Playlist.module.css";
+import "./style.css";
 import { Calendar } from "rsuite";
 import Star from "../../assets/star.svg";
 import NoStar from "../../assets/Pictogrammers-Material-Light-Star.32.png";
@@ -58,14 +58,14 @@ function Playlist() {
     <>
       <Header />
       <Container>
-        <section className={styles.playlist}>
+        <section className="playlist">
           <h2>Playlist das Edições</h2>
 
-          <div className={styles.items}>
-            <div className={styles.calendar}>
+          <div className="items">
+            <div className="calendar">
               <Calendar compact bordered />
             </div>
-            <div className={styles.tabela}>
+            <div className="tabela">
               <table>
                 <caption>
                   <h3>{`Músicas Tocadas - Edicao n.${edicao.edicaoId ?? ' 848'}`}</h3>
@@ -73,11 +73,11 @@ function Playlist() {
                 {/* Cabeçalho da tabela */}
                 <thead>
                   <tr>
-                    <th className={styles.ordem}>Ordem</th>
-                    <th className={styles.artista}>Artista</th>
-                    <th className={styles.titulo}>Título</th>
-                    <th className={styles.sampleUrl}> Ouça aqui</th>
-                    <th className={styles.preferida}>Preferida</th>
+                    <th className="ordem">Ordem</th>
+                    <th className="artista">Artista</th>
+                    <th className="titulo">Título</th>
+                    <th className="sampleUrl"> Ouça aqui</th>
+                    <th className="preferida">Preferida</th>
                   </tr>
                 </thead>
                 {/* Corpo da tabela e os dados */}
@@ -87,18 +87,18 @@ function Playlist() {
                       <th>{edicao.order}</th>
                       <td>{edicao.Artista}</td>
                       <td>{edicao.Titulo}</td>
-                      <td className={styles.sampleUrl}>
+                      <td className="sampleUrl">
                         <button>
                           <img
                             src={CirclePlay}
-                            className={styles.star}
+                            className="star"
                             alt="Preferida"
                           />
                         </button>
                       </td>
-                      <td className={styles.sampleUrl}>
+                      <td className="sampleUrl">
                         <button>
-                          {edicao.preferida ? <img src={Star} className={styles.star} alt="preferida"></img> : <img src={NoStar} className={styles.hidestar} alt="preferida"></img>}
+                          {edicao.preferida ? <img src={Star} className="star" alt="preferida"></img> : <img src={NoStar} className="hidestar" alt="preferida"></img>}
                         </button>
                       </td>
                     </tr>
