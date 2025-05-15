@@ -13,8 +13,9 @@ function Header() {
       <span>Notebook LiveMix</span>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/Account">Perfil</Link>
+        <Link to="/Account">Conta</Link>
         <Link to="/Playlist">Edições</Link>
+        <Link to="/Songs">Músicas</Link>
         <Link to="/Favorites">Caderninho</Link>
         <Link to="/About">Sobre</Link>
       </nav>

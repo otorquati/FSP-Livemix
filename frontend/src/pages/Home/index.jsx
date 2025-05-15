@@ -1,14 +1,14 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Listening from "../../assets/LiveMixDJ-removebg.png"
-import styles from './Home.module.css';
+import './style.css';
 import Container from "../../components/Container";
 function Home() {
   return (
     <>
       <Header />
       <Container>
-        <section className={styles.home}>
+        <section className="home">
           <div>
             <p>
               Bem-vindo ao seu caderninho <span>Livemix</span>

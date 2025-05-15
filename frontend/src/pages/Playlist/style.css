@@ -17,26 +17,26 @@
 }
 
 .calendar {
-	width: 400px;
+	width: 300px;
 	color: var(--natural-soft);
 	align-items: center;
 }
 
 .tabela table{
-	width: 700px;
+	width: 800px;
 	& th {
 		text-align: left;
-		border: 1px solid var(--natural);
 	}
-	& td {
-		border: 1px solid var(--natural);
+	& thead {
+		padding-bottom: 10px;
+		background-color: var(--natural);
 	}
 }
 
 .tabela th, td{
-	width: 300px;
 	padding: 5px 5px;
-	width: 200px;
+	background-color: var(--primary);
+	margin-bottom: 2px;
 }
 
 .sampleUrl {

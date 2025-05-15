@@ -11,9 +11,7 @@ function Favorites() {
         <div className="favorites">
           <h1>Preferidas do Ano</h1>
         </div>
-        
-          <CardFavorite />
-       
+        <CardFavorite />
       </Container>
       <Footer />
     </>

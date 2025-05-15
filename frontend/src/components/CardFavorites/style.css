@@ -1,12 +1,57 @@
 .cardfavorites {
-	max-width: 450px;
-	width: 50%;
-	height: 200px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	background-color: var(--primary-hard);
-	border-radius: 15px;
-	padding: 20px;
+  width: 40vw;
+  height: auto;
+  background-color: var(--primary-hard);
+    display: flex;
+    align-items: center;
+    border-radius: 15px 15px 0px 0px;
+    padding: 20px;
+    & h3 {
+      color: var(--natural);
+    }
+    & p {
+      font-size: 1.5rem;
+      color: var(--natural);
+    }
+    & a {
+      padding-right: 10px;
+      font-size: 1rem;
+    }
+  }
+ 
+.imagem_capa {
+  height: 8rem;
+  width: 8rem;
+}
+
+.cardfavorites_metadata {
+  width: 100%;
+  padding: 20px;
+  & div {
+    margin-bottom: 5px;
+  }
+}
+
+.ranking {
+      height: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px;
+      justify-content: center;
+      color: var(--enhanced);
+      padding: auto;
+      & :hover {
+        opacity: 0.6;
+      }
+      & .trash {
+        color: var(--alert);
+        & :hover {
+          opacity: 0.4;
+        }
+      }
+    }
+
+.icon {
+  height: 1.5rem;
 }
 

@@ -1,4 +1,6 @@
 .favorites {
+	max-width: 80vw;
+	width: 40vw;
 	height: 100px;
 	display: flex;
 	flex-direction: column;
@@ -10,16 +12,6 @@
 
 div {
 	color: var(--natural)
-}
-
-h1 {
-	font-size: 3rem;
-	color: var(--natural);
-	margin-bottom: 20px;
-}
-p {
-	font-size: 2rem;
-	color: var( --natural-soft)
 }
 
 span {
