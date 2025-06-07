@@ -1,38 +1,42 @@
-.tablelist{
-	overflow: auto;
-	margin-top: 10px;
-	max-width: 100vw;
-	width: auto;
-	background-color: var(--primary);
-	border-radius: 10px;
-	padding: 20px;
-
+.tablelist {
+  overflow: auto;
+  margin-top: 10px;
+  max-width: 100vw;
+  width: auto;
+  background-color: var(--primary);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .songtable {
-	color: var(--natural);
-	& thead {
-		text-align: left;
-		font-size: 1rem;
-		font-weight:bolder;
-		color: var(--natural-soft);
-		& th {
-			padding: 10px 10px;
-			width: auto;
-		}
-	}
-	& tbody {
-		color: lightskyblue;
-		text-align: left;
-		&tr {
-		}
-		& td {
-		gap: 10px;
-		width:auto;	
-		font-size: 1rem;
-		padding: 10px;
-	}
-	}
-
+  color: var(--natural-soft);
+  & thead {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: var(--natural-soft);
+    & th {
+      padding: 10px 10px;
+      width: auto;
+    }
+  }
+  & tbody {
+    color: lightskyblue;
+    text-align: left;
+    &tr {
+      color: antiquewhite;
+    }
+    & td {
+      gap: 10px;
+      width: auto;
+      font-size: 1rem;
+      padding: 10px;
+      color: aquamarine;
+    }
+  }
 }
 
+.cover{
+	height: 32px;
+	width: 32px;  
+}

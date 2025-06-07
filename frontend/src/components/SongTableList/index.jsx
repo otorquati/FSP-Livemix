@@ -1,31 +1,30 @@
 import "./style.css";
-import React from "react";
-import Songs from "../../pages/Songs/index";
-function SongTableList({ Songs }) {
+import Star from "../../assets/star.svg";
+import CirclePlay from "../../assets/circle-play.svg";
+function SongTableList({ songs }) {
   return (
     <>
       <div className="tablelist">
         <table className="songtable">
           <thead>
             <tr>
-              <th>Ordem</th>
               <th>Artista</th>
               <th>Título</th>
               <th>Amostra</th>
-              <th>Duração</th>
-              <th>Favorita</th>
+              <th>Capa</th>
             </tr>
           </thead>
           <tbody>
-            {Songs.map((song) => (
-              <tr>
-                <td>{song.order}</td>
-                <td>{song.Artista}</td>
-                <td>{song.Titulo}</td>
-                <td>{song.sampleUrl}</td>
-                <td>{song.duracao}</td>
-                <td>{song.preferida}</td>
-                <button className="btn_favorite"></button>
+            {songs.map((song) => (
+              <tr key={song.id}>
+                <td>{song.Artist}</td>
+                <td>{song.title}</td>
+                <td><a href={song.sampleAddr}></a>
+                  <button>
+                  <img src={CirclePlay} className="star" alt="Preferida" />
+                  </button>
+                </td>
+                <td><img className="cover" src={song.coverImage} alt="Imagem de Capa" /></td>
               </tr>
             ))}
           </tbody>

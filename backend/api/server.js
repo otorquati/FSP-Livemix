@@ -2,9 +2,11 @@
 import express from "express";
 import 'dotenv/config';
 import { db }  from "./connect.js";
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const PORT = 3000;
 
@@ -106,7 +108,11 @@ app.post("/playlist", async (req, res) => {
 });
 
 app.get("/playlist", async (req, res) => {
-  const playlist = await db.editions.findMany();
+  const playlist = await db.playlist.findMany({
+    include: {edition: true, songs: true },
+  }
+    
+  );
   res.status(200).json(playlist);
 });
 
@@ -125,7 +131,7 @@ app.put("/playlist/:id", async (req, res) => {
 });
 
 app.delete("/playlist/:id", async (req, res) => {
-  const playlist = await db.editions.delete({
+  const playlist = await db.playlist.delete({
     where: {
       id: req.params.id,
     },
@@ -176,7 +182,5 @@ app.delete("/songs/:id", async (req, res) => {
   });
   res.status(200).json({ message: "Música deletada com sucesso!" });
 });
-
-
 
 app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));

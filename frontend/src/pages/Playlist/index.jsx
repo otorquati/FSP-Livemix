@@ -6,8 +6,19 @@ import { Calendar } from "rsuite";
 import Star from "../../assets/star.svg";
 import NoStar from "../../assets/Pictogrammers-Material-Light-Star.32.png";
 import CirclePlay from "../../assets/circle-play.svg";
+import api from "../../services/api.js";
+import { useEffect, useState } from "react";
 function Playlist() {
-  const edicao = [
+  const [playlistDb, setPlaylistDb] = useState([]);
+  async function getPlaylist() {
+    const playlistFromApi = await api.get('/playlist');
+    setPlaylistDb(playlistFromApi.data);
+  }
+    useEffect(() => {
+          getPlaylist();
+    }, []);
+
+  /* const edicao = [
     {
       id: "100",
       edicaoId: "848",
@@ -45,7 +56,7 @@ function Playlist() {
       preferida: true,
     },
     {
-      id: "400",
+      id: "500",
       edicaoId: "848",
       order: "5",
       Artista: "Donna Summer",
@@ -53,7 +64,7 @@ function Playlist() {
       sampleUrl: "http://www.centraldj.com.br/freeconnection/434",
       preferida: true,
     },
-  ];
+  ]; */
   return (
     <>
       <Header />
@@ -65,47 +76,7 @@ function Playlist() {
             <div className="calendar">
               <Calendar compact bordered />
             </div>
-            <div className="tabela">
-              <table>
-                <caption>
-                  <h3>{`Músicas Tocadas - Edicao n.${edicao.edicaoId ?? ' 848'}`}</h3>
-                </caption>
-                {/* Cabeçalho da tabela */}
-                <thead>
-                  <tr>
-                    <th className="ordem">Ordem</th>
-                    <th className="artista">Artista</th>
-                    <th className="titulo">Título</th>
-                    <th className="sampleUrl"> Ouça aqui</th>
-                    <th className="preferida">Preferida</th>
-                  </tr>
-                </thead>
-                {/* Corpo da tabela e os dados */}
-                <tbody>
-                  {edicao.map((edicao) => (
-                    <tr key={edicao.id}>
-                      <th>{edicao.order}</th>
-                      <td>{edicao.Artista}</td>
-                      <td>{edicao.Titulo}</td>
-                      <td className="sampleUrl">
-                        <button>
-                          <img
-                            src={CirclePlay}
-                            className="star"
-                            alt="Preferida"
-                          />
-                        </button>
-                      </td>
-                      <td className="sampleUrl">
-                        <button>
-                          {edicao.preferida ? <img src={Star} className="star" alt="preferida"></img> : <img src={NoStar} className="hidestar" alt="preferida"></img>}
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+    
           </div>
         </section>
       </Container>

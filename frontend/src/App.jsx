@@ -1,7 +1,9 @@
 import "./App.css";
 import AppRoutes from "./routes";
+import ErrorBoundary from "./ErrorBoundary"
 
-function navigate(url) {
+{
+  /*function navigate(url) {
   window.location.href = url;
 }
 
@@ -12,13 +14,14 @@ async function auth() {
   const data = await response.json();
   console.log(data);
   navigate(data.url);
+}*/
 }
 
 function App() {
   return (
-    <>
-      <AppRoutes />
-    </>
+    <ErrorBoundary>
+        <AppRoutes />
+    </ErrorBoundary>
   );
 }
 
