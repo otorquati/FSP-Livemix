@@ -3,11 +3,10 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./style.css";
 import { Calendar } from "rsuite";
-import Star from "../../assets/star.svg";
-import NoStar from "../../assets/Pictogrammers-Material-Light-Star.32.png";
-import CirclePlay from "../../assets/circle-play.svg";
+
 import api from "../../services/api.js";
 import { useEffect, useState } from "react";
+import PlaylistTableList from './../../components/PlaylisTableList/index';
 function Playlist() {
   const [playlistDb, setPlaylistDb] = useState([]);
   async function getPlaylist() {
@@ -76,7 +75,7 @@ function Playlist() {
             <div className="calendar">
               <Calendar compact bordered />
             </div>
-    
+            {PlaylistTableList(playlistDb)}
           </div>
         </section>
       </Container>

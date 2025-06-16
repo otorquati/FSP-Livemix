@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Landing from "./pages/Landing";
 import Account from "./pages/Account";
 import Playlist from "./pages/Playlist";
 import Songs from "./pages/Songs";
@@ -13,7 +13,7 @@ function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/landing" element={<Landing />}></Route>
         <Route path="/account" element={<Account />}></Route>
         <Route path="/playlist" element={<Playlist />}></Route>
         <Route path="/songs" element={<Songs />}></Route>

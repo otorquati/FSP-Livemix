@@ -19,10 +19,10 @@ function SongTableList({ songs }) {
               <tr key={song.id}>
                 <td>{song.Artist}</td>
                 <td>{song.title}</td>
-                <td><a href={song.sampleAddr}></a>
-                  <button>
+                <td>
+                  <a href={song.sampleAddr}>
                   <img src={CirclePlay} className="star" alt="Preferida" />
-                  </button>
+                  </a>
                 </td>
                 <td><img className="cover" src={song.coverImage} alt="Imagem de Capa" /></td>
               </tr>
