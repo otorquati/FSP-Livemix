@@ -2,13 +2,12 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Listening from "../../assets/LiveMixDJ-removebg.png";
 import "./style.css";
-import Container from "../../components/Container";
-import Landing from "../Landing";
+import Container from "../../components/Container/index";
 function Home() {
   return (
     <>
       <Header />
-  
+      <Container>
         <div className="home">
           <div>
             <p>
@@ -22,6 +21,7 @@ function Home() {
             <img src={Listening} alt="" />
           </figure>
         </div>
+      </Container>
       <Footer />
     </>
   );

@@ -1,14 +1,7 @@
 /*  CSS da Page Home */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .home {
 	width: 100vw;
-	margin: auto;
-	min-height: 87vh;
+	height: 85vh;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

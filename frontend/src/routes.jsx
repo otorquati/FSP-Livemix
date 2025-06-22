@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Landing from "./pages/Landing";
+import Register from "./pages/Register";
 import Account from "./pages/Account";
 import Playlist from "./pages/Playlist";
 import Songs from "./pages/Songs";
@@ -7,13 +7,15 @@ import Favorites from "./pages/Favorites";
 import About from "./pages/About";
 import Page404 from "./pages/Page404";
 import { BrowserRouter, Route, Routes } from "react-router";
+import Login from "./pages/Login";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/landing" element={<Landing />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/account" element={<Account />}></Route>
         <Route path="/playlist" element={<Playlist />}></Route>
         <Route path="/songs" element={<Songs />}></Route>

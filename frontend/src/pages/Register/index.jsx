@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { jwtDecode } from "jwt-decode";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // User regex to control the constraints of each field
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,32}$/;
@@ -16,13 +16,13 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-z0-9.]{1,64}@[a-z0-9.]{1,64}$/;
 
 import React from "react";
-import Container from '../../components/Container/index';
+import Container from "../../components/Container/index";
 
-const Landing = () => {
+const Register = () => {
   const userRef = useRef();
   const errRef = useRef();
 
-  // Campos da página Landing
+  // Campos da página Register
   const [user, setUser] = useState("");
   const [validName, setValidName] = useState(false);
   const [userFocus, setUserFocus] = useState(false);
@@ -70,18 +70,21 @@ const Landing = () => {
   }, [email]);
 
   useEffect(() => {
-    setErrMsg('');
+    setErrMsg("");
   }, [user, pwd, matchPwd]);
 
   const handleSubmit = async (e) => {
-    e.preventDefaul();
+    e.preventDefault();
     // if button enabled with JS hack
     const v1 = USER_REGEX.test(user);
     const v2 = PWD_REGEX.test(pwd);
-    if (!v1 || !v2) {
+    const v3 = EMAIL_REGEX.test(email);
+    console.log(v1, v2, v3)
+    if (!v1 || !v2 || !v3) {
       setErrMsg("Dados Inválidos");
       return;
     }
+    console.log(user, pwd);
     setSuccess(true);
   };
 
@@ -90,25 +93,33 @@ const Landing = () => {
 
   return (
     <>
-    {success ? (
-      <section>
-        <h1>Sucesso!</h1>
-        <p>
-          <a href="/home">Logado</a>
-        </p>
-        <Home />
-      </section>
-    ):(
-      <section>
-        <p
-          ref={errRef}
-          className={errMsg ? "errmsg" : "offscreen"}
-          aria-live="assertive"
-        >
-          {errMsg}
-        </p>
-        <h1>Login / Cadastro</h1>
-        <form onSubmit={handleSubmit}>
+      {success ? (
+        <section>
+           {isLoggedIn ? (
+              <div className="login">
+                <img src={profilePic} className="img" alt="Profile" />
+                <p>Nome: {user}</p>
+                <p>Email: {email}</p>
+              </div>
+            ) : (
+              ""
+            )}
+          <h2>Sucesso!</h2>
+          <p>
+           {navigates("/")}
+          </p>
+        </section>
+      ) : (
+        <section>
+          <p
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
+          <h2>Login / Cadastro</h2>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="username">
               Usuário:
               <span className={validName ? "valid" : "hide"}>
@@ -211,19 +222,22 @@ const Landing = () => {
               <span aria-label="percent">%</span>
             </p>
 
-            <label htmlFor="password">
+            <label htmlFor="confirm_pwd">
               Confirme sua Senha:
-              <span className={validMatch ? "valid" : "hide"}>
-                <FontAwesomeIcon icon={faCheck} />
-              </span>
-              <span className={validMatch || !pwd ? "hide" : "invalid"}>
-                <FontAwesomeIcon icon={faTimes} />
-              </span>
+              <FontAwesomeIcon
+                icon={faCheck}
+                className={validMatch ? "valid" : "hide"}
+              />
+              <FontAwesomeIcon
+                icon={faTimes}
+                className={validMatch || !pwd ? "hide" : "invalid"}
+              />
             </label>
             <input
               type="password"
               id="confirm_pwd"
               onChange={(e) => setMatchPwd(e.target.value)}
+              value={matchPwd}
               required
               aria-invalid={validMatch ? "false" : "true"}
               aria-describedby="confirmnote"
@@ -240,39 +254,44 @@ const Landing = () => {
               Deve ser igual a digitada no campo Senha
             </p>
 
-            <button
-              disabled={!validName || !validPwd || !validMatch ? true : false}
+            <button type="submit" disabled={
+                !validName || !validPwd || !validEmail || !validMatch
+                  ? true
+                  : false
+              }
             >
               Cadastrar
             </button>
-        </form>
-        <div className="google">
-          <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              const decode = jwtDecode(credentialResponse.credential);
-              setUser(decode.name);
-              setEmail(decode.email);
-              setSuccess(true);
-              setProfilePic(decode.picture);
-              setIsLoggedIn(true);
-              navigates("/");
-            }}
-            onError={() => console.log("Falha no Login")}
-            />
-        </div>
-
-        {isLoggedIn ? (
-          <div className="login">
-            <img src={profilePic} className="img" alt="Profile" />
-            <p>Nome: {user}</p>
-            <p>Email: {email}</p>
-          </div>
-        ) : (
-          ""
-        )}
-      </section>)}
+          </form>
+          <p>
+            {" "}
+            Já tem cadastro?
+            <br />
+            <span className="line">
+              <a href="/">Entre</a>
+            </span>
+          </p>
+          <div className="google">
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  const decode = jwtDecode(credentialResponse.credential);
+                  console.log(decode)
+                  setUser(decode.name);
+                  setEmail(decode.email);
+                  setProfilePic(decode.picture);
+                  console.log(profilePic)
+                  setIsLoggedIn(true); 
+                  setSuccess(true);  
+                }}
+                onError={() => console.log("Falha no Login")}
+              />
+            </div>
+      
+           
+        </section>
+      )}
     </>
   );
 };
 
-export default Landing;
+export default Register;

@@ -20,7 +20,7 @@ function Header() {
         <Link to="/About">Sobre</Link>
       </nav>
       <div>
-        <Link to='/Landing'>
+        <Link to='/Login'>
           <FontAwesomeIcon className="Link" icon={faCirclePlay} />
         </Link>
       </div>
